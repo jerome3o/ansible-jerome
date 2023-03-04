@@ -16,6 +16,9 @@ all:
         jerome-pc:
           ansible_host: "{{ vault_jerome_pc_host }}"
           ansible_become_password: "{{ vault_jerome_pc_password }}"
+        liv-pc:
+          ansible_host: "{{ vault_liv_pc_host }}"
+          ansible_become_password: "{{ vault_liv_pc_password }}"
     laptops:
       hosts:
         framework-laptop: 
