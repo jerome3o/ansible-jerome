@@ -1,0 +1,39 @@
+all:
+  children:
+    pis:
+      hosts:
+        rpi1:
+          ansible_host: "{{ vault_rpi1_host }}"
+          ansible_become_password: "{{ vault_rpi1_password }}"
+        rpi2:
+          ansible_host: "{{ vault_rpi2_host }}"
+          ansible_become_password: "{{ vault_rpi2_password }}"
+        rpi3:
+          ansible_host: "{{ vault_rpi3_host }}"
+          ansible_become_password: "{{ vault_rpi3_password }}"
+    pcs:
+      hosts:
+        jerome-pc:
+          ansible_host: "{{ vault_jerome_pc_host }}"
+          ansible_become_password: "{{ vault_jerome_pc_password }}"
+    laptops:
+      hosts:
+        framework-laptop: 
+          ansible_host: "{{ vault_framework_laptop_host }}"
+          ansible_become_password: "{{ vault_framework_laptop_password }}"
+        lenovo-laptop:
+          ansible_host: "{{ vault_lenovo_laptop_host }}"
+          ansible_become_password: "{{ vault_lenovo_laptop_password }}"
+    servers:
+      hosts:
+        mlrig:
+          ansible_host: "{{ vault_mlrig_host }}"
+          ansible_become_password: "{{ vault_mlrig_password }}"
+        flatserver:
+          ansible_host: "{{ vault_flatserver_host }}"
+          ansible_become_password: "{{ vault_flatserver_password }}"
+  vars:
+    ansible_user: "{{ vault_ansible_user }}"
+    ansible_ssh_private_key_file: "{{ vault_ansible_ssh_private_key_file }}"
+    ansible_become_password: "{{ vault_ansible_become_password }}"
+    ansible_become_user: "{{ vault_ansible_become_user }}"

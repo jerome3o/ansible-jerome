@@ -1,0 +1,6 @@
+- name: Node Exporter
+  hosts: all
+  collections:
+    - prometheus.prometheus
+  roles:
+    - node_exporter
